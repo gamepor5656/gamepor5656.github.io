@@ -78,5 +78,24 @@
       <span id="about">Brewed & Co.</span
       ><span>Made with warmth, served with care.</span>
     </footer>
+     <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  </script>
   </body>
 </html>
