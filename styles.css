@@ -1,0 +1,360 @@
+:root {
+  --cream: #faf7f0;
+  --ink: #3b291e;
+  --muted: #76695d;
+  --gold: #c8ad82;
+  --line: #e9e1d5;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-header {
+  height: 72px;
+  padding: 0 5.1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(71, 52, 37, 0.08);
+  background: var(--cream);
+  position: relative;
+  z-index: 5;
+}
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+.brand span {
+  color: var(--gold);
+  font-style: italic;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 42px);
+}
+.navigation a {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #6d5c4d;
+  padding: 8px 0;
+  position: relative;
+}
+.navigation a::after {
+  content: "";
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  background: var(--ink);
+  transition: width 0.2s ease;
+}
+.navigation a:hover::after,
+.navigation a.active::after {
+  width: 100%;
+}
+.order-button {
+  background: var(--ink);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 23px;
+  font-size: 11px;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.order-button:hover,
+.button-dark:hover {
+  background: #62432f;
+  transform: translateY(-2px);
+}
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 23px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: min(760px, calc(100vh - 72px));
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 8.9%;
+  position: relative;
+  min-width: 0;
+}
+.copy-inner {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+}
+.eyebrow {
+  color: #a38a68;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  margin: 0 0 25px;
+}
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(43px, 5vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -2.4px;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+h1 em {
+  color: var(--gold);
+}
+.intro {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 0;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 31px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 11px;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button-dark {
+  background: var(--ink);
+  color: white;
+}
+.button-light {
+  border: 1px solid #ddd3c5;
+  color: #33271e;
+  background: rgba(255, 255, 255, 0.25);
+}
+.button-light:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.tiny-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.hero-visual {
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+  background: #514132 url("coffee-hero.jpg") center center / cover no-repeat;
+}
+.image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 19, 13, 0.16),
+    rgba(25, 19, 13, 0.05) 48%,
+    rgba(25, 19, 13, 0.16)
+  );
+  pointer-events: none;
+}
+.origin-tag {
+  position: absolute;
+  right: 7%;
+  top: 4%;
+  background: rgba(45, 31, 21, 0.76);
+  color: #fffaf2;
+  border-radius: 20px;
+  padding: 9px 14px;
+  font-size: 10px;
+}
+.special-card {
+  position: absolute;
+  left: 4.5%;
+  bottom: 4%;
+  background: #fffdf8;
+  padding: 15px 19px 16px;
+  border-radius: 15px;
+  box-shadow: 0 8px 28px rgba(28, 18, 10, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.special-card span {
+  color: #96836d;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 9px;
+}
+.special-card strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.image-caption {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  letter-spacing: 0.8px;
+}
+.below-fold {
+  text-align: center;
+  padding: 100px 24px;
+  max-width: 720px;
+  margin: auto;
+}
+.below-fold .eyebrow {
+  margin-bottom: 16px;
+}
+.below-fold h2 {
+  font:
+    600 clamp(32px, 4vw, 48px)/1.15 "Playfair Display",
+    serif;
+  margin: 0 0 15px;
+}
+.below-fold p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 auto 25px;
+  max-width: 510px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 5%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+}
+footer span:first-child {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: var(--ink);
+}
+@media (min-width: 1300px) {
+  .hero-copy {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media (max-width: 800px) {
+  .site-header {
+    height: 66px;
+    padding: 0 5%;
+  }
+  .brand {
+    font-size: 19px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    padding: 20px 5%;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .navigation.is-open {
+    display: flex;
+  }
+  .order-button {
+    padding: 10px 15px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-copy {
+    min-height: 500px;
+    padding: 65px 8%;
+  }
+  .copy-footer {
+    left: 8%;
+    bottom: 22px;
+  }
+  .hero-visual {
+    min-height: 560px;
+  }
+  h1 {
+    font-size: clamp(44px, 9vw, 64px);
+  }
+}
+@media (max-width: 460px) {
+  .order-button {
+    font-size: 10px;
+    padding: 10px 12px;
+  }
+  .menu-toggle {
+    margin-right: 9px;
+  }
+  .hero-copy {
+    min-height: 465px;
+    padding: 55px 7%;
+  }
+  .eyebrow {
+    margin-bottom: 19px;
+  }
+  h1 {
+    letter-spacing: -1.6px;
+    font-size: 43px;
+  }
+  .intro {
+    font-size: 13px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .hero-visual {
+    min-height: 490px;
+  }
+  .image-caption {
+    display: none;
+  }
+  footer {
+    gap: 12px;
+    flex-direction: column;
+  }
+}
